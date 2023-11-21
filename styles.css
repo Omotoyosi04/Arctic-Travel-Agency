@@ -302,9 +302,6 @@ nav ul li a {
     justify-content: end;
     overflow: hidden;
 }
-/*.resorts[background-image]:hover {
-    z-index: 1;
-}*/
 .resorts:nth-child(2) {
     background-image: url(images/pic1.jpg) ;
     background-position: center;
