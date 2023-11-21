@@ -1,0 +1,830 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600&display=swap');
+
+html {
+    overflow-x: hidden;
+    scroll-behavior: smooth;
+}
+body {
+    font-family: 'Poppins', sans-serif;
+    height: 100vh;
+    margin: 0;
+}
+.nav {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-around;
+    width: 100vw;
+    height: 3.5rem;
+    background-color: transparent;
+    padding: .5rem;
+}
+.nav .label {
+    display: flex;
+    align-items: center;
+}
+.nav .label .plane {
+    color: #3e86f5;
+    font-size: 22px;
+    transform: rotate(-45deg);
+    padding: .5rem;
+    border-radius: 50%;
+    border: 2px dashed #fff;
+    margin-right: .5rem;
+}
+.nav .label h2 {
+    color: #fff;
+    font-size: 20px;
+}
+.nav ul {
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+}
+.nav ul {
+    width: 16rem;
+    display: flex;
+    justify-content: space-between;
+}
+
+.nav ul li {
+    list-style-type: none;
+}
+
+nav ul li a {
+    text-decoration: none;
+    color: #fff;
+    font-size: 14px;
+}
+
+.nav button {
+    padding: .7rem 2.3rem;
+    font-size: 14px;
+    font-weight: 600;
+    background-color: #fff;
+    color: #3e86f5;
+    border: none;
+    border-radius: 5px;
+    margin-left: 7rem;
+}
+#home {
+    width: 100vw;
+    height: 100vh;
+    position: relative;
+}
+.home {
+    position: absolute;
+    right: 0;
+    top: -4.5rem;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.1)), url(images/Mountain\ top.jpg);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    color: #fff;
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    z-index: -1;
+}
+.home h1 {
+    font-size: 40px;
+}
+.home small {
+    font-size: 16px;
+    max-width: 550px;
+}
+.float {
+    width: max-content;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: auto;
+    background-color: #fff;
+    padding: 1rem 2rem;
+    border-radius: 10px;
+    position: relative;
+    top: -7rem;
+}
+.float .content div{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: fit-content;
+    margin-right: 1.5rem;
+}
+.float span {
+    font-size: 14px;
+    color: #929191;
+}
+.bottom {
+    padding-top: 5px;
+}
+.bottom small {
+    font-size: 12px;
+    padding-right: .2rem;
+}
+.bottom .arrow-down {
+    font-size: 12px;
+    color: #666;
+}
+.location {
+    font-size: 14px;
+    color: #3E86F5;
+}
+.person {
+    font-size: 14px;
+    color: #00C07B;
+}
+.calendar {
+    font-size: 14px;
+        color: #CC0024;
+}
+.float .book {
+    color: #fff;
+    background-color: #3E86F5;
+    border: 0;
+    border-radius: 8px;
+    padding: .7rem 1.5rem;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+}
+.book ion-icon {
+    padding-left: .5rem;
+}
+.brands {
+    background-color: #F8F9FC;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    position: absolute;
+    top: 100vh;
+    padding-top: 5rem;
+    z-index: -1;
+}
+.brands img {
+    margin: 1.5rem;
+}
+#location {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    margin-top: 3.2rem;
+    padding: 3rem 0 1.6rem;
+    background: #F8F9FC url(images/map.svg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: top center;
+}
+#location h2 span {
+    color: #3E86F5;
+}
+#location h2:nth-child(1), p {
+    max-width: 500px;
+}
+#location small {
+    max-width: 500px;
+    font-size: 14px;
+    margin-top: -.6rem;
+    margin-bottom: 6rem;
+}
+#container {
+    display: flex;
+    width: 100%;
+    height: 75vh;
+    color: #fff;
+}
+.expandingBg {
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    cursor: pointer;
+    flex: .5;
+    position: relative;
+    transition: flex .9s ease-in;
+    overflow: hidden;
+}
+.expandingBg h2, p, .fa-angles-left, .btn {
+    position: absolute;
+    left: 4rem;
+    top: 4rem;
+}
+.expandingBg .all {
+    opacity: 0;
+    transform: translateX(-25rem);
+    transition: opacity .9s ease-in,transform .9s ease-in-out;
+}
+.expandingBg .first {
+    font-size: 1.8rem;
+    bottom: 1rem;
+    right: 0;
+    transform: rotate(-90deg) translateY(90%) translateX(5%);
+    transition: all 0.7s ease-in-out;
+}
+.expandingBg .second {
+    top: 7rem;
+}
+.expandingBg p {
+    top: 11rem;
+    font-size: .8rem;
+    left: 4rem;
+}
+.expandingBg .btn {
+    top: 15rem;
+    left: 4rem;
+}
+.expandingBg.active {
+    flex: 5;
+}
+.expandingBg.active .all {
+    opacity: 1;
+    transform: translateX(0rem);
+    transition-delay: .3s;
+}
+.expandingBg.active .first {
+    opacity: 0;
+}
+.mountain {
+    background: linear-gradient(180deg, rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3)),url(images/Mountain\ resorts.jpg);background-position: center;
+    background-size: cover;
+}
+.fuji {
+    background-image: linear-gradient(180deg, rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3)), url(images/Fuji\ mountains.jpg);
+}
+.winterlake {
+    background-image: linear-gradient(180deg, rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3)), url(images/freezing\ winterlake.jpg);
+}
+.expandingBg i {
+    color: #fff; 
+    background-color: #3E86F5;
+    font-size: 16px;
+    padding: .8rem;
+    border-radius: 50%;
+    box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+}
+.expandingBg .btn {
+    color: #fff;
+    background-color: #3E86F5;
+    padding: .6rem 1.8rem;
+    border: 0;
+    border-radius: 5px;
+    font-size: 12px;
+}
+#resort {
+    display: grid;
+    grid-template-columns: 20rem 20rem;
+    grid-column-gap: 1rem;
+    grid-row-gap: 1rem;
+    align-items: center;
+    justify-content: center;
+    padding: 3rem 5rem;
+    max-width: 98vw;
+    left: 0;
+    right: 0;
+}
+#resort h2 {
+    margin-top: -13rem;
+}
+.resorts {
+    width: 20rem;
+    height: 25rem;
+    color: #fff;
+    border-radius: 1rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: end;
+    overflow: hidden;
+}
+/*.resorts[background-image]:hover {
+    z-index: 1;
+}*/
+.resorts:nth-child(2) {
+    background-image: url(images/pic1.jpg) ;
+    background-position: center;
+    background-size: cover;
+}
+.resorts:nth-child(3) {
+    margin-top: -27rem;
+    background-image: url(images/pic2.png);
+    background-position: center;
+    background-size: cover;
+}
+.resorts:nth-child(4) {
+    background-image: url(images/pic3.png);
+    background-position: center;
+    background-size: cover;
+}
+.resorts:nth-child(5) {
+    margin-top: -13.5rem;
+    background-image: url(images/pic4.png);
+    background-position: center;
+    background-size: cover;
+}
+.resorts-content {
+    display: flex;
+    flex-direction: column;
+    align-items: left;
+    justify-content: end;
+    transform: translateY(8.2rem);
+    transition: all 0.4s linear;
+}
+.resorts-content h4 {
+    margin-bottom: .3rem;
+}
+.resorts-content small, h4 {
+    padding-left: 2rem;
+}
+.resorts-content button {
+    width: 80%;
+    align-self: center;
+    margin-bottom: 3rem;
+    padding: .7rem;
+    background-color: #3E86F5;
+    color: #fff;
+    border: 0;
+    border-radius: 5px;
+}
+.resorts:hover .resorts-content {
+    transform: translateY(-.1rem);
+    z-index: 1;
+}
+#passes {
+    height: 60vh;
+    width: 100%;
+    padding: 3rem;
+    background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url(images/last\ picture.jpg);
+    background-size: cover;
+    background-position-y: -20rem;
+    color: #fff;
+}
+#passes h2 {
+    max-width: 550px;
+    font-size: 36px;
+}
+#passes button {
+    border: 0;
+    border-radius: 10px;
+    background-color: #3E86F5;
+    color: #fff;
+    padding: 1rem 3rem;
+}
+#contact {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 2rem 5rem;
+}
+#contact .icons {
+    color: #3e86f5;
+    font-size: 16px;
+    padding: 1rem;
+    border-radius: 50%;
+}
+#contact .fa-facebook-f {
+    padding: 1rem 1.2rem;
+}
+#contact .div1 {
+    max-width: 280px;
+}
+#contact .div1 > .icons {
+    transform: rotate(-45deg);
+    border: 1px #BEBEBE dashed;
+}
+.socials > .icons {
+    border: 1px #C1C0C0 solid;
+    margin-right: .5rem;
+    margin-top: 2.5rem;
+}
+.div2 {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+}
+.div2 div {
+    margin-left: 4rem;
+}
+.div2 span {
+    color: #3E86F5;
+    word-spacing: 10px;
+}
+.div2 ul li {
+    list-style-type: none;
+    line-height: 40px;
+    font-size: 14px;
+    margin-left: -2rem;
+    text-align: left;
+}
+footer {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    padding: 2rem 5rem;
+}
+footer small {
+    color: rgba(0, 0, 0, 0.50);
+}
+
+/**  TABLET RESPONSIVENESS  **/
+
+@media(max-width: 1100px) {
+    body {
+        overflow-x: hidden;
+        background-color: #F8F9FC;
+    }
+    .expandingBg .all {
+        margin-top: 7rem;
+    }
+    .expandingBg .all .back {
+        font-size: 1.3rem;
+    }
+    .expandingBg .all h2 {
+        font-size: 3rem;
+        margin-left: -5rem;
+    }
+    .expandingBg .all p {
+        font-size: 1.3rem;
+        margin-top: 5rem;
+    }
+    .expandingBg .all .btn {
+        font-size: 1.3rem;
+        margin-top: 7rem;
+    }
+}
+@media(max-width: 919px) {
+    .nav button {
+        margin-left: 1rem;
+    }
+    .brands {
+        position: static;
+        margin-top: -8.7rem;
+    }
+    .expandingBg .first {
+        width: max-content;
+        transform: rotate(-90deg) translateY(50%) translateX(-60%);
+    }
+    .expandingBg .all {
+        margin-left: 4rem;
+    }
+    .expandingBg .all .back, p, .btn {
+        margin-left: -5rem;
+    }
+    #passes h2 {
+        margin: 2rem;
+        font-size: 2.5rem;
+    }
+    #passes button {
+        font-size: 1rem;
+        margin: 2rem;
+    }
+    #contact {
+        padding: 2rem 2rem;
+    }
+    #contact .div1 {
+        max-width: 250px;
+    }
+    #contact .div2 {
+        padding-top: 1.5rem;
+    }
+}
+
+/**  MOBILE RESPONSIVENESS  **/
+
+@media(max-width: 450px) {
+    .nav {
+        max-width: 100%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        transition: background-color 0.6s ease;
+        z-index: 1;
+    }
+    .label, #toggle {
+        top: 0rem;
+    }
+    .nav .label h2 {
+        width: max-content;
+    }
+    .nav.inAction {
+        position: fixed;
+        width: 100vw;
+        height: 100vh;
+        margin: 0;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;background-color: rgba(5, 40, 97, .7);
+        backdrop-filter: blur(5px);
+    }
+    nav ul {
+        padding: 0;
+        margin: 0;
+        width: 0;
+        opacity: 0;
+        transition: all
+        .8s ease-in-out;
+    }
+    nav ul li {
+        display: none;
+    }
+    nav.inAction ul  {
+        width: 75%;
+        display: flex;
+        flex-direction: column;
+        opacity: 1;
+        margin-top: 6rem;
+        margin-bottom: -18rem;
+    }
+    .nav.inAction ul li {
+        margin: 1rem 0;
+        display: block;
+    }
+    .nav.inAction ul li a {
+        font-size: 30px;
+    }
+    .nav button {
+        display: none;
+    }
+    .nav #toggle {
+        background-color: transparent;
+        height: 42px;
+        width: 42px;
+        position: relative;
+        margin-right: 2rem;
+    }
+    .nav #toggle .line {
+        position: absolute;
+        right: 0;
+        top: 10px;
+        width: 35px;
+        height: 2px;
+        background-color: #fff;
+    }
+    .nav #toggle .line2 {
+        top: 20px;
+        width: 26px;
+    }
+    .nav #toggle .line3 {
+        top: 30px;
+    }
+    .nav.inAction .label {
+        margin-top: -10rem;
+        display: flex;
+    }
+    .nav.inAction #toggle {
+        padding: 5px;
+        border: 2px solid #fff;
+        border-radius: 50%;
+        display: flex;
+        left: 2px;
+        margin-top: 20rem;
+        margin-left: 1.5rem;
+    }
+    .nav.inAction .lines .line1 {
+        transform: rotate(45deg) translateY(16px) translateX(4px);
+    }
+    .nav.inAction .lines .line2{
+        display: none;
+    }
+    .nav.inAction .lines .line3 {
+        transform: rotate(-45deg) translateY(-10px) translateX(-3px);
+    }
+    #home h1 {
+        font-size: 24px;
+        text-align: center;
+        max-width: 300px;
+    }
+    #home small {
+        max-width: 300px;
+        font-size: 12px;
+    }
+    .float {
+        display: flex;
+        flex-direction: column;
+        width: 75vw;
+        position: relative;
+        margin-top: -3.5rem;
+        height: 25rem;
+        padding: 1rem 0;
+    }
+    .float .top ion-icon {
+        position: absolute;
+        left: 10%;
+        padding: 1.5rem;
+        top: 2rem;
+        border-radius: 50%;
+        font-size: 16px;
+    }
+    .float .top .location {
+        background-color: #ECF3FE;
+        top: 2rem;
+    }
+    .float .top .person {
+        background-color: #EBFFF8;
+        top: 7rem;
+    }
+    .float .top .calendar{
+        background-color: #FFF0F2;
+        top: 12rem;
+    }
+    .float .top .calendar2 {
+        color: #1A0004;
+        background-color: #F8F7F7;
+        top: 17rem;
+    }
+    .float .top span {
+        position: absolute;
+        top: 2.5rem;
+        left: 40%;
+    }
+    .float .top .span2 {
+        top: 7.5rem;
+    }
+    .float .top .span3 {
+        top: 12.5rem;
+    }
+    .float .top .span4 {
+        top: 17.5rem;
+    }
+    .float .bottom small {
+        position: absolute;
+        top: 4rem;
+        left: 40%;
+    }
+    .float .bottom .small2 {
+        top: 9rem;
+    }
+    .float .bottom .small3 {
+        top: 14rem;
+    }
+    .float .bottom .small4 {
+        top: 19rem;
+    }
+    .float .bottom ion-icon {
+        position: absolute;
+        right: 10%;
+        top: 3.5rem;
+        font-size: 16px;
+    }
+    .float .bottom .arrow2 {
+        top: 8.5rem;
+    }
+    .float .bottom .arrow3 {
+        top: 13.5rem;
+    }
+    .float .bottom .arrow4 {
+        top: 18.5rem;
+    }
+    .float .book {
+        position: absolute;
+        bottom: 1.2rem;
+        width: 90%;
+        padding: 1rem 0;
+        margin-top: 1rem;
+        font-size: 16px;
+    }
+    .brands {
+        max-width: 300px;
+        margin: auto;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin-top: -9rem;
+    }
+    .brands img:nth-child(1) {
+        display: none;
+    }
+    .brands img:nth-child(2) {
+        display: none;
+    }
+    .brands img {
+        width: 70px;
+        height: 80px;
+    }
+    #container {
+        display: flex;
+        flex-direction: column;
+    }
+    #container .first {
+        transform: rotate(0deg) translateX(-2rem) translateY(2rem);
+    }
+    .expandingBg {
+        padding: 0 1.5rem;}
+    .expandingBg.active .all {
+        margin-top: 2rem;
+        margin-left: 2rem;
+    }
+    .expandingBg.active .back {
+        font-size: 16px;
+    }
+    .expandingBg.active .second {
+        font-size: 26px;
+        margin-top: 0.5rem;
+        width: max-content;
+    }
+    .expandingBg.active .first {
+        transform: translateX(-28rem) translateY(10rem) !important;
+        opacity: 1;
+    }
+    .expandingBg.active p {
+        font-size: 16px;
+        margin-top: -.5rem;
+    }
+    .expandingBg.active .btn {
+        margin-top: 1rem;
+        font-size: 16px;
+        padding: .7rem 2.5rem;
+    }
+    #location {
+        padding: 0 1rem;
+    }
+    #location h2 {
+        font-size: 22px;
+    }
+    #resort {
+        margin-top: 11rem;
+        display: flex;
+        flex-direction: column;
+    }
+    #resort h2 {
+        width: fit-content;
+        font-size: 20px;
+        margin-left: -3.5rem;
+        padding: 1.2rem 0;
+    }
+    .resorts:nth-child(3) {
+        margin-top: 0rem;
+    }
+    .resorts:nth-child(5) {
+        margin-top: .5rem;
+    }
+    .resorts-content {
+        transform: translateY(0);
+        transition: none;
+    }
+    .resorts:hover {
+        transition: none;
+    }
+    .resorts:hover .resorts-content {
+        transition: none;
+    }
+    #passes {
+        padding: 2rem .2rem;
+        background-size: cover;
+        background-position-y: -34rem;
+    }
+    #passes h2 {
+        font-size: 24px;
+    }
+    #contact {
+        display: flex;
+        flex-direction: column;
+        position: relative;
+        margin: 0;
+    }
+    #contact .socials {
+        position: absolute;
+        bottom: 0;
+    }
+    #contact .div2 {
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+        align-items: center;
+        justify-content: space-between;
+        margin: 2rem 0;
+    }
+    #contact .div2 div {
+        margin: 1rem;
+    }
+    footer {
+        width: 100vw;
+    }
+    footer .small:nth-child(1) {
+        width: fit-content;
+        font-size: 10px;
+        padding: 0;
+        margin: 0;
+    }
+    footer .small:nth-child(2), .small:nth-child(3) {
+        display: none;
+    }
+}
+@media(max-width: 360px) {
+.nav .label {
+        margin-left: .5rem;
+    }
+    .nav #toggle {
+        margin-left: -3em;
+    }
+    #passes {
+        background-size: cover;
+        background-position-y: 30.6rem;
+    }
+}
